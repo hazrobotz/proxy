@@ -7,7 +7,7 @@ import etcd
 
 application = Flask(__name__, static_url_path='', template_folder=".")
 
-ttl = os.getenv('TTL', 3600)
+ttl = int(os.getenv('TTL', 3600))
 mykey = os.getenv('PROXY_SECRET', b'henNGICSjvcmkRgGXx8My2DcJ8tQJrtLkAXrGIqa9NA=')
 numplants = int(os.getenv('NUM_PLANTS'))
 planthost = os.getenv('PLANT_HOSTNAME', 'http://127.0.0.1:8000/')
